@@ -1,0 +1,280 @@
+html,
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.navigation {
+    background-color: #333;
+    height: 12vh;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+.navigation > ul > li {
+    list-style-type: none;
+}
+
+.navigation > ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+}
+
+.navigation > ul > li > img {
+    width: 13%;
+}
+
+header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+}
+
+header > .title {
+    z-index: 1;
+    position: fixed;
+    top: 12vh;
+    padding-left: 6vh;
+    height: 8vh;
+    width: 100%;
+    border-bottom: 1px solid #8e8e93;
+    background-color: white;
+
+}
+
+.top-songs {
+    margin-top: 4vh;
+    position: relative;
+    top: 24vh;
+}
+
+@media only screen and (max-width: 600px) {
+    
+    .album-artist-name {
+        display: none;
+    }
+
+    .song-tile {
+        display: -ms-grid;
+        display: grid;
+        -ms-grid-columns: 0.5fr 1fr 2.5fr 2fr;
+        grid-template-columns: 0.5fr 1fr 2.5fr 2fr;
+        padding: 5px;
+    }
+
+    .song-tile > img {
+        -ms-flex-item-align: center;
+            -ms-grid-row-align: center;
+            align-self: center;
+    }
+
+    .album-price,
+    .release-date {
+        display: none;
+    }
+
+    .song-name,
+    .artist-name {
+        -ms-grid-column-align: start;
+            justify-self: start;
+        -ms-flex-item-align: center;
+            -ms-grid-row-align: center;
+            align-self: center;
+    }
+    .song-name {
+        color: black;
+    }
+    .album-ranking {
+        -ms-grid-column-align: center;
+            justify-self: center;
+        -ms-flex-item-align: center;
+            -ms-grid-row-align: center;
+            align-self: center;
+    }
+
+    .song-name,
+    .album-ranking,
+    .artist-name {
+        font-weight: bold;
+        font-size: 16px;
+    }
+    .artist-name {
+        color: #da0f47;
+    }
+    .grey {
+        background-color: #F5F5F5;
+    }
+
+    .white {
+        background-color: white;
+    }
+
+}
+
+@media only screen and (max-width: 320px) {
+    
+    .album-artist-name {
+        display: block;
+        color: #333;
+        font-weight: bold;
+        
+    }
+
+    .song-tile {
+        display: -ms-grid;
+        display: grid;
+        -ms-grid-columns: 1fr 1fr 3fr;
+        grid-template-columns: 1fr 1fr 3fr;
+        padding: 5px;
+    }
+
+    .song-tile > img {
+        -ms-flex-item-align: center;
+            -ms-grid-row-align: center;
+            align-self: center;
+    }
+
+    .album-price,
+    .release-date,
+    .artist-name,
+    .song-name {
+        display: none;
+    }
+    
+    .album-artist-name {
+       -ms-grid-column-align: start;
+           justify-self: start;
+        -ms-flex-item-align: center;
+            -ms-grid-row-align: center;
+            align-self: center; 
+    }
+
+
+    .album-ranking {
+        -ms-grid-column-align: center;
+            justify-self: center;
+        -ms-flex-item-align: center;
+            -ms-grid-row-align: center;
+            align-self: center;
+        
+    }
+
+   
+    .album-ranking,
+     {
+        font-weight: bold;
+        font-size: 8px;
+        color: black;
+    }
+  
+    .grey {
+        background-color: #F5F5F5;
+    }
+
+    .white {
+        background-color: white;
+    }
+
+}
+
+@media only screen and (min-width: 600px) {
+
+    .album-artist-name {
+        display: none;
+    }
+
+    .song-tile {
+        display: -ms-grid;
+        display: grid;
+        -ms-grid-columns: 1fr 1fr 3fr 2fr 2fr 1fr;
+        grid-template-columns: 1fr 1fr 3fr 2fr 2fr 1fr;
+        padding: 5px;
+        -webkit-transition: all .2s ease-in-out;
+        -o-transition: all .2s ease-in-out;
+        transition: all .2s ease-in-out;
+    }
+
+    .song-tile > img {
+        -ms-flex-item-align: center;
+            -ms-grid-row-align: center;
+            align-self: center;
+    }
+
+    .song-tile:hover {
+        -webkit-transform: scale(1.1);
+            -ms-transform: scale(1.1);
+                transform: scale(1.1);
+
+    }
+
+    .song-name,
+    .artist-name,
+    .release-date,
+    .album-price {
+        -ms-grid-column-align: start;
+            justify-self: start;
+        -ms-flex-item-align: center;
+            -ms-grid-row-align: center;
+            align-self: center;
+    }
+    .song-name {
+        color: black;
+    }
+
+    .album-ranking {
+        -ms-grid-column-align: center;
+            justify-self: center;
+        -ms-flex-item-align: center;
+            -ms-grid-row-align: center;
+            align-self: center;
+    }
+
+    .song-name,
+    .album-ranking,
+    .artist-name {
+        font-weight: bold;
+        font-size: 16px;
+    }
+
+    .album-price {
+        border: 1px solid #da0f47;
+        padding: 5px;
+        border-radius: 5px;
+        color: #da0f47;
+    }
+
+    .artist-name {
+        color: #da0f47;
+    }
+    .grey {
+        background-color: #F5F5F5;
+    }
+
+    .white {
+        background-color: white;
+    }
+}

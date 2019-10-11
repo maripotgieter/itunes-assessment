@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <title> iTunes Top 100 </title>
+
+</head>
+
+<body>
+    <div id="main">
+        <header>
+            <nav class="navigation">
+                <ul>
+                    <li><img src="images/apple_logo.png" alt="apple-logo"></li>
+
+                </ul>
+            </nav>
+            <div class="title">
+                <h3>{{ title }}</h3>
+            </div>
+        </header>
+
+        <div class="top-songs" v-if="loaded">
+            <div class="song-tile" v-for="song,index in songs" :class="[{ 'white' : (index % 2 == 0) }, 'grey']">
+                <div class="album-ranking">{{index + 1}}</div>
+
+                <img :src="song['im:image'][0]['label']" :alt="song['im:artist'].label">
+                <a class="song-name" :href="song.link.attributes.href">{{ song["im:name"].label }}</a>
+                <div class="artist-name">{{ song["im:artist"].label }}</div>
+                <div class="release-date">{{filterDate(song["im:releaseDate"].label)}}</div>
+                <a class="album-price">{{ song["im:price"].label }}</a>
+                <a class="album-artist-name" :href="song.link.attributes.href">{{ song.title.label }}</a>
+            </div>
+        </div>
+        <div v-else></div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script type="text/javascript" src="main.js"></script>
+</body>
+
+</html>
